@@ -10,12 +10,13 @@ class Sapot(BaseHTTPRequestHandler):
     def do_GET(self):
 
         self.basedir = Path(__file__).resolve().parent.parent
-        self.filepath = os.path.join(self.basedir, 'frontend/template')
-        
+        self.template = os.path.join(self.basedir, 'frontend/template')
+        self.static = os.path.join(self.basedir, 'frontend/static')
+
         if self.path == '/':
-            filename = self.filepath + '/index.html'
+            filename = self.template + '/index.html'
         else:
-            filename = self.filepath + self.path
+            filename = self.static + self.path
 
         self.send_response(200)
         if filename[-4:] == '.css':
