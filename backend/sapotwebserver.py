@@ -27,6 +27,26 @@ class Sapot(BaseHTTPRequestHandler):
             self.send_header('Content-type', 'application/javascript')
         elif filename[-4:] == '.ico':
             self.send_header('Content-type', 'image/x-icon')
+        elif filename[-4:] == '.svg':
+            self.send_header('Content-type', 'image/svg+xml')
+        elif filename[-4:] == '.png':
+            self.send_header('Content-type', 'image/x-png')
+        elif filename[-4:] == '.jpg':
+            self.send_header('Content-type', 'image/jpeg')
+        elif filename[-4:] == '.bmp':
+            self.send_header('Content-type', 'image/bmp')
+        elif filename[-4:] == '.avi':
+            self.send_header('Content-type', 'video/x-msvideo')
+        elif filename[-4:] == '.3gp':
+            self.send_header('Content-type', 'video/3gpp')
+        elif filename[-4:] == '.3g2':
+            self.send_header('Content-type', 'video/3gpp2')
+        elif filename[-4:] == '.mp4':
+            self.send_header('Content-type', 'video/mp4')
+        elif filename[-4:] == '.otf':
+            self.send_header('Content-type', 'font/otf')
+        elif filename[-4:] == '.woff':
+            self.send_header('Content-type', 'font/woff')
         else:
             self.send_header('Content-type', 'text/html')
         self.end_headers()
